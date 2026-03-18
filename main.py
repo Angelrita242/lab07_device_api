@@ -3,7 +3,17 @@ from pydantic import BaseModel
 
 app = FastAPI(title="SmartBuilding Devices API")
 
+
+@app.get("/")
+def home():
+    return {"message": "Smart Building Device API" }
+
 # In-memory "database"
+@app.get("/devices")
+def get_all_devices():
+    return devices 
+
+
 devices = [
     {
         "id": 1,
@@ -27,3 +37,5 @@ class Device(BaseModel):
     energy_usage: int
     location: str 
     status: str = "inactive"
+
+

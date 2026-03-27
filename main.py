@@ -84,4 +84,3 @@ def get_total_energy_usage():
     total_energy_usage = sum(device["energy_usage"] for device in devices)
     return {"total_energy_usage": total_energy_usage}
 
-
